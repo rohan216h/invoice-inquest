@@ -1,0 +1,91 @@
+[
+  {
+    "id": "V001",
+    "legalName": "Acme Industrial Supplies Ltd",
+    "aliases": ["Acme Industries", "ACME IND"],
+    "country": "US",
+    "taxId": "US-EIN-84-1234567",
+    "currency": "USD",
+    "approved": true,
+    "bankAccountLast4": "4521",
+    "paymentTerms": "Net 30"
+  },
+  {
+    "id": "V002",
+    "legalName": "Sakura Tech Solutions Co., Ltd.",
+    "aliases": ["Sakura Tech", "サクラテック"],
+    "country": "JP",
+    "taxId": "JP-CN-1234567890123",
+    "currency": "JPY",
+    "approved": true,
+    "bankAccountLast4": "7890",
+    "paymentTerms": "Net 45"
+  },
+  {
+    "id": "V003",
+    "legalName": "EuroLogistik GmbH",
+    "aliases": ["Euro Logistik", "EuroLog"],
+    "country": "DE",
+    "taxId": "DE-VAT-DE123456789",
+    "currency": "EUR",
+    "approved": true,
+    "bankAccountLast4": "3344",
+    "paymentTerms": "Net 60"
+  },
+  {
+    "id": "V004",
+    "legalName": "Pinnacle Office Furnishings Inc.",
+    "aliases": ["Pinnacle Furnishings", "POF"],
+    "country": "US",
+    "taxId": "US-EIN-92-7654321",
+    "currency": "USD",
+    "approved": true,
+    "bankAccountLast4": "8812",
+    "paymentTerms": "Net 30"
+  },
+  {
+    "id": "V005",
+    "legalName": "CloudNine Hosting Services",
+    "aliases": ["CloudNine", "C9 Hosting"],
+    "country": "US",
+    "taxId": "US-EIN-55-9876543",
+    "currency": "USD",
+    "approved": true,
+    "bankAccountLast4": "2256",
+    "paymentTerms": "Net 15",
+    "bankAccountChangedDate": "2026-10-28"
+  },
+  {
+    "id": "V006",
+    "legalName": "Brighton & Hale Consulting LLP",
+    "aliases": ["B&H Consulting", "Brighton Hale"],
+    "country": "GB",
+    "taxId": "GB-VAT-GB987654321",
+    "currency": "GBP",
+    "approved": true,
+    "bankAccountLast4": "1100",
+    "paymentTerms": "Net 30"
+  },
+  {
+    "id": "V007",
+    "legalName": "QuickPrint Promotional Materials",
+    "aliases": ["QuickPrint", "QP Promo"],
+    "country": "US",
+    "taxId": "US-EIN-33-1112233",
+    "currency": "USD",
+    "approved": false,
+    "bankAccountLast4": "5599",
+    "paymentTerms": "Net 30"
+  },
+  {
+    "id": "V008",
+    "legalName": "Global Raw Materials Trading Pte Ltd",
+    "aliases": ["Global Raw", "GRMT"],
+    "country": "SG",
+    "taxId": "SG-UEN-202012345X",
+    "currency": "SGD",
+    "approved": true,
+    "bankAccountLast4": "7701",
+    "paymentTerms": "Net 90"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "invoiceNumber": "INV-2041",
+    "normalizedInvoiceNumber": "INV2041",
+    "vendorId": "V001",
+    "vendorName": "Acme Industrial Supplies Ltd",
+    "amount": 1349.46,
+    "currency": "USD",
+    "date": "2026-10-15",
+    "poNumber": "PO-2026-001",
+    "status": "APPROVED",
+    "processedDate": "2026-10-16"
+  },
+  {
+    "invoiceNumber": "INV-POF-0087",
+    "normalizedInvoiceNumber": "INVPOF0087",
+    "vendorId": "V004",
+    "vendorName": "Pinnacle Office Furnishings Inc.",
+    "amount": 12390.60,
+    "currency": "USD",
+    "date": "2026-07-01",
+    "poNumber": "PO-2026-004",
+    "status": "APPROVED",
+    "processedDate": "2026-07-02"
+  }
+]

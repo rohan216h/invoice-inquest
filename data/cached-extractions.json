@@ -1,0 +1,649 @@
+{
+  "01_happy_path_clean.pdf": {
+    "vendorName": {
+      "value": "Acme Industrial Supplies Ltd",
+      "confidence": 0.98,
+      "source": "Acme Industrial Supplies Ltd\n742 Commerce Blvd, Suite 200\nHouston, TX 77001"
+    },
+    "vendorTaxId": {
+      "value": "US-EIN-84-1234567",
+      "confidence": 0.97,
+      "source": "Tax ID: US-EIN-84-1234567"
+    },
+    "invoiceNumber": {
+      "value": "INV-2026-0451",
+      "confidence": 0.99,
+      "source": "Invoice #: INV-2026-0451"
+    },
+    "invoiceDate": {
+      "value": "2026-10-28",
+      "confidence": 0.98,
+      "source": "Date: October 28, 2026"
+    },
+    "dueDate": {
+      "value": "2026-11-27",
+      "confidence": 0.97,
+      "source": "Due Date: November 27, 2026"
+    },
+    "currency": {
+      "value": "USD",
+      "confidence": 0.99,
+      "source": "All amounts in USD"
+    },
+    "poReference": {
+      "value": "PO-2026-001",
+      "confidence": 0.98,
+      "source": "PO Reference: PO-2026-001"
+    },
+    "lineItems": {
+      "value": [
+        {
+          "description": "Industrial Safety Gloves (Box of 100)",
+          "qty": 50,
+          "unitPrice": 24.99,
+          "amount": 1249.50
+        }
+      ],
+      "confidence": 0.97,
+      "source": "Industrial Safety Gloves (Box of 100) | 50 | $24.99 | $1,249.50"
+    },
+    "subtotal": {
+      "value": 1249.50,
+      "confidence": 0.99,
+      "source": "Subtotal: $1,249.50"
+    },
+    "taxAmount": {
+      "value": 99.96,
+      "confidence": 0.98,
+      "source": "Sales Tax (8%): $99.96"
+    },
+    "taxRate": {
+      "value": 0.08,
+      "confidence": 0.97,
+      "source": "Sales Tax (8%): $99.96"
+    },
+    "total": {
+      "value": 1349.46,
+      "confidence": 0.99,
+      "source": "TOTAL DUE: $1,349.46"
+    },
+    "taxIncluded": {
+      "value": false,
+      "confidence": 0.95,
+      "source": "Subtotal and tax shown separately"
+    },
+    "bankAccountLast4": {
+      "value": "4521",
+      "confidence": 0.96,
+      "source": "Bank Account: ****4521"
+    },
+    "documentQuality": {
+      "value": "clean",
+      "confidence": 0.99,
+      "source": "Digital PDF, clear text extraction"
+    },
+    "notes": {
+      "value": "Payment Terms: Net 30. Thank you for your business.",
+      "confidence": 0.95,
+      "source": "Payment Terms: Net 30. Thank you for your business."
+    }
+  },
+  "02_split_po_instalment_2.pdf": {
+    "vendorName": {
+      "value": "Pinnacle Office Furnishings Inc.",
+      "confidence": 0.98,
+      "source": "Pinnacle Office Furnishings Inc.\n1500 Design District Drive\nDallas, TX 75207"
+    },
+    "vendorTaxId": {
+      "value": "US-EIN-92-7654321",
+      "confidence": 0.97,
+      "source": "Tax ID: US-EIN-92-7654321"
+    },
+    "invoiceNumber": {
+      "value": "INV-POF-0088",
+      "confidence": 0.99,
+      "source": "Invoice No: INV-POF-0088"
+    },
+    "invoiceDate": {
+      "value": "2026-09-15",
+      "confidence": 0.98,
+      "source": "Invoice Date: September 15, 2026"
+    },
+    "dueDate": {
+      "value": "2026-10-15",
+      "confidence": 0.97,
+      "source": "Due Date: October 15, 2026"
+    },
+    "currency": {
+      "value": "USD",
+      "confidence": 0.99,
+      "source": "Currency: USD"
+    },
+    "poReference": {
+      "value": "PO-2026-004",
+      "confidence": 0.98,
+      "source": "Purchase Order: PO-2026-004"
+    },
+    "lineItems": {
+      "value": [
+        {
+          "description": "Executive Standing Desk (Electric)",
+          "qty": 10,
+          "unitPrice": 899.00,
+          "amount": 8990.00
+        }
+      ],
+      "confidence": 0.97,
+      "source": "Executive Standing Desk (Electric) | 10 | $899.00 | $8,990.00"
+    },
+    "subtotal": {
+      "value": 8990.00,
+      "confidence": 0.99,
+      "source": "Subtotal: $8,990.00"
+    },
+    "taxAmount": {
+      "value": 629.30,
+      "confidence": 0.98,
+      "source": "Tax (7%): $629.30"
+    },
+    "taxRate": {
+      "value": 0.07,
+      "confidence": 0.97,
+      "source": "Tax (7%): $629.30"
+    },
+    "total": {
+      "value": 9619.30,
+      "confidence": 0.99,
+      "source": "Total Due: $9,619.30"
+    },
+    "taxIncluded": {
+      "value": false,
+      "confidence": 0.95,
+      "source": "Subtotal and tax shown separately"
+    },
+    "bankAccountLast4": {
+      "value": "8812",
+      "confidence": 0.96,
+      "source": "Pay to Account ending: 8812"
+    },
+    "documentQuality": {
+      "value": "clean",
+      "confidence": 0.99,
+      "source": "Digital PDF, clear text extraction"
+    },
+    "notes": {
+      "value": "Instalment 2 of 3 for PO-2026-004. Payment Terms: Net 30.",
+      "confidence": 0.95,
+      "source": "Note: Instalment 2 of 3 for PO-2026-004. Payment Terms: Net 30."
+    }
+  },
+  "02b_split_po_instalment_3_overbill.pdf": {
+    "vendorName": {
+      "value": "Pinnacle Office Furnishings Inc.",
+      "confidence": 0.98,
+      "source": "Pinnacle Office Furnishings Inc.\n1500 Design District Drive\nDallas, TX 75207"
+    },
+    "vendorTaxId": {
+      "value": "US-EIN-92-7654321",
+      "confidence": 0.97,
+      "source": "Tax ID: US-EIN-92-7654321"
+    },
+    "invoiceNumber": {
+      "value": "INV-POF-0089",
+      "confidence": 0.99,
+      "source": "Invoice No: INV-POF-0089"
+    },
+    "invoiceDate": {
+      "value": "2026-11-01",
+      "confidence": 0.98,
+      "source": "Invoice Date: November 1, 2026"
+    },
+    "dueDate": {
+      "value": "2026-12-01",
+      "confidence": 0.97,
+      "source": "Due Date: December 1, 2026"
+    },
+    "currency": {
+      "value": "USD",
+      "confidence": 0.99,
+      "source": "Currency: USD"
+    },
+    "poReference": {
+      "value": "PO-2026-004",
+      "confidence": 0.98,
+      "source": "Purchase Order: PO-2026-004"
+    },
+    "lineItems": {
+      "value": [
+        {
+          "description": "Ergonomic Mesh Office Chair",
+          "qty": 10,
+          "unitPrice": 549.00,
+          "amount": 5490.00
+        },
+        {
+          "description": "Monitor Arm (Dual)",
+          "qty": 10,
+          "unitPrice": 189.00,
+          "amount": 1890.00
+        },
+        {
+          "description": "Executive Standing Desk (Electric)",
+          "qty": 5,
+          "unitPrice": 899.00,
+          "amount": 4495.00
+        },
+        {
+          "description": "Installation & Setup",
+          "qty": 1,
+          "unitPrice": 1625.00,
+          "amount": 1625.00
+        }
+      ],
+      "confidence": 0.96,
+      "source": "Ergonomic Mesh Office Chair | 10 | $549.00 | $5,490.00\nMonitor Arm (Dual) | 10 | $189.00 | $1,890.00\nExecutive Standing Desk (Electric) | 5 | $899.00 | $4,495.00\nInstallation & Setup | 1 | $1,625.00 | $1,625.00"
+    },
+    "subtotal": {
+      "value": 13500.00,
+      "confidence": 0.99,
+      "source": "Subtotal: $13,500.00"
+    },
+    "taxAmount": {
+      "value": 945.00,
+      "confidence": 0.98,
+      "source": "Tax (7%): $945.00"
+    },
+    "taxRate": {
+      "value": 0.07,
+      "confidence": 0.97,
+      "source": "Tax (7%): $945.00"
+    },
+    "total": {
+      "value": 14445.00,
+      "confidence": 0.99,
+      "source": "Total Due: $14,445.00"
+    },
+    "taxIncluded": {
+      "value": false,
+      "confidence": 0.95,
+      "source": "Subtotal and tax shown separately"
+    },
+    "bankAccountLast4": {
+      "value": "8812",
+      "confidence": 0.96,
+      "source": "Pay to Account ending: 8812"
+    },
+    "documentQuality": {
+      "value": "clean",
+      "confidence": 0.99,
+      "source": "Digital PDF, clear text extraction"
+    },
+    "notes": {
+      "value": "Final instalment (3 of 3) for PO-2026-004. Includes installation and setup charges. Payment Terms: Net 30.",
+      "confidence": 0.94,
+      "source": "Note: Final instalment (3 of 3) for PO-2026-004. Includes installation and setup charges."
+    }
+  },
+  "03_near_duplicate.pdf": {
+    "vendorName": {
+      "value": "Acme Industrial Supplies Ltd",
+      "confidence": 0.98,
+      "source": "Acme Industrial Supplies Ltd\n742 Commerce Blvd, Suite 200\nHouston, TX 77001"
+    },
+    "vendorTaxId": {
+      "value": "US-EIN-84-1234567",
+      "confidence": 0.97,
+      "source": "Tax ID: US-EIN-84-1234567"
+    },
+    "invoiceNumber": {
+      "value": "INV 2041 ",
+      "confidence": 0.95,
+      "source": "Invoice #: INV 2041"
+    },
+    "invoiceDate": {
+      "value": "2026-10-18",
+      "confidence": 0.98,
+      "source": "Date: October 18, 2026"
+    },
+    "dueDate": {
+      "value": "2026-11-17",
+      "confidence": 0.97,
+      "source": "Due Date: November 17, 2026"
+    },
+    "currency": {
+      "value": "USD",
+      "confidence": 0.99,
+      "source": "All amounts in USD"
+    },
+    "poReference": {
+      "value": "PO-2026-001",
+      "confidence": 0.98,
+      "source": "PO Reference: PO-2026-001"
+    },
+    "lineItems": {
+      "value": [
+        {
+          "description": "Industrial Safety Gloves (Box of 100)",
+          "qty": 50,
+          "unitPrice": 24.99,
+          "amount": 1249.50
+        }
+      ],
+      "confidence": 0.97,
+      "source": "Industrial Safety Gloves (Box of 100) | 50 | $24.99 | $1,249.50"
+    },
+    "subtotal": {
+      "value": 1249.50,
+      "confidence": 0.99,
+      "source": "Subtotal: $1,249.50"
+    },
+    "taxAmount": {
+      "value": 99.96,
+      "confidence": 0.98,
+      "source": "Sales Tax (8%): $99.96"
+    },
+    "taxRate": {
+      "value": 0.08,
+      "confidence": 0.97,
+      "source": "Sales Tax (8%): $99.96"
+    },
+    "total": {
+      "value": 1349.46,
+      "confidence": 0.99,
+      "source": "TOTAL DUE: $1,349.46"
+    },
+    "taxIncluded": {
+      "value": false,
+      "confidence": 0.95,
+      "source": "Subtotal and tax shown separately"
+    },
+    "bankAccountLast4": {
+      "value": "4521",
+      "confidence": 0.96,
+      "source": "Bank Account: ****4521"
+    },
+    "documentQuality": {
+      "value": "clean",
+      "confidence": 0.99,
+      "source": "Digital PDF, clear text extraction"
+    },
+    "notes": {
+      "value": "Payment Terms: Net 30. Thank you for your business.",
+      "confidence": 0.95,
+      "source": "Payment Terms: Net 30. Thank you for your business."
+    }
+  },
+  "04_missing_fields.pdf": {
+    "vendorName": {
+      "value": "EuroLogistik GmbH",
+      "confidence": 0.92,
+      "source": "EuroLogistik GmbH\nIndustriestraße 45\n60329 Frankfurt, Germany"
+    },
+    "vendorTaxId": {
+      "value": "DE-VAT-DE123456789",
+      "confidence": 0.90,
+      "source": "USt-IdNr: DE123456789"
+    },
+    "invoiceNumber": {
+      "value": null,
+      "confidence": 0.15,
+      "source": "No invoice number found on document"
+    },
+    "invoiceDate": {
+      "value": "2026-10-25",
+      "confidence": 0.85,
+      "source": "Datum: 25.10.2026"
+    },
+    "dueDate": {
+      "value": null,
+      "confidence": 0.10,
+      "source": "No due date found on document"
+    },
+    "currency": {
+      "value": "EUR",
+      "confidence": 0.90,
+      "source": "€4,500.00"
+    },
+    "poReference": {
+      "value": null,
+      "confidence": 0.10,
+      "source": "No PO reference found on document"
+    },
+    "lineItems": {
+      "value": [
+        {
+          "description": "Logistics services - October",
+          "qty": 1,
+          "unitPrice": 4500.00,
+          "amount": 4500.00
+        }
+      ],
+      "confidence": 0.75,
+      "source": "Logistics services - October | 1 | €4,500.00"
+    },
+    "subtotal": {
+      "value": 4500.00,
+      "confidence": 0.80,
+      "source": "Zwischensumme: €4,500.00"
+    },
+    "taxAmount": {
+      "value": null,
+      "confidence": 0.12,
+      "source": "No tax amount found on document"
+    },
+    "taxRate": {
+      "value": null,
+      "confidence": 0.12,
+      "source": "No tax rate found on document"
+    },
+    "total": {
+      "value": null,
+      "confidence": 0.10,
+      "source": "No total amount found on document"
+    },
+    "taxIncluded": {
+      "value": null,
+      "confidence": 0.10,
+      "source": "Cannot determine if tax is included"
+    },
+    "bankAccountLast4": {
+      "value": "3344",
+      "confidence": 0.88,
+      "source": "Konto: ****3344"
+    },
+    "documentQuality": {
+      "value": "clean",
+      "confidence": 0.95,
+      "source": "Digital PDF, clear text extraction"
+    },
+    "notes": {
+      "value": "Rechnung für Logistikdienstleistungen Oktober 2026. Zahlungsbedingungen: 60 Tage netto.",
+      "confidence": 0.80,
+      "source": "Rechnung für Logistikdienstleistungen Oktober 2026"
+    }
+  },
+  "05_scanned_implied_po.png": {
+    "vendorName": {
+      "value": "CloudNine Hosting Services",
+      "confidence": 0.82,
+      "source": "CloudNine Hosting Services\n2200 Cloud Ave, Suite 800\nSan Jose, CA 95110"
+    },
+    "vendorTaxId": {
+      "value": "US-EIN-55-9876543",
+      "confidence": 0.78,
+      "source": "EIN: 55-9876543"
+    },
+    "invoiceNumber": {
+      "value": "INV-C9-2026-112",
+      "confidence": 0.80,
+      "source": "Invoice: INV-C9-2026-112"
+    },
+    "invoiceDate": {
+      "value": "2026-10-30",
+      "confidence": 0.82,
+      "source": "Date: Oct 30, 2026"
+    },
+    "dueDate": {
+      "value": "2026-11-14",
+      "confidence": 0.78,
+      "source": "Due: Nov 14, 2026"
+    },
+    "currency": {
+      "value": "USD",
+      "confidence": 0.85,
+      "source": "$18,000.00"
+    },
+    "poReference": {
+      "value": null,
+      "confidence": 0.20,
+      "source": "No explicit PO reference found"
+    },
+    "lineItems": {
+      "value": [
+        {
+          "description": "Cloud Hosting - Annual Enterprise Plan",
+          "qty": 1,
+          "unitPrice": 18000.00,
+          "amount": 18000.00
+        },
+        {
+          "description": "DDoS Protection Add-on",
+          "qty": 1,
+          "unitPrice": 3600.00,
+          "amount": 3600.00
+        }
+      ],
+      "confidence": 0.78,
+      "source": "Cloud Hosting - Annual Enterprise Plan | 1 | $18,000.00\nDDoS Protection Add-on | 1 | $3,600.00"
+    },
+    "subtotal": {
+      "value": 21600.00,
+      "confidence": 0.82,
+      "source": "Subtotal: $21,600.00"
+    },
+    "taxAmount": {
+      "value": 0,
+      "confidence": 0.75,
+      "source": "Tax: $0.00"
+    },
+    "taxRate": {
+      "value": 0,
+      "confidence": 0.70,
+      "source": "Tax: $0.00 (Exempt)"
+    },
+    "total": {
+      "value": 21600.00,
+      "confidence": 0.85,
+      "source": "Total: $21,600.00"
+    },
+    "taxIncluded": {
+      "value": false,
+      "confidence": 0.75,
+      "source": "Subtotal and tax shown separately"
+    },
+    "bankAccountLast4": {
+      "value": "9934",
+      "confidence": 0.72,
+      "source": "Wire to account ending 9934"
+    },
+    "documentQuality": {
+      "value": "scanned",
+      "confidence": 0.95,
+      "source": "Image file, OCR-extracted text, slight rotation detected"
+    },
+    "notes": {
+      "value": "As per our quote of March 2026. Annual hosting and security services. Payment Terms: Net 15.",
+      "confidence": 0.70,
+      "source": "As per our quote of March 2026"
+    }
+  },
+  "06_unapproved_vendor.pdf": {
+    "vendorName": {
+      "value": "QuickPrint Promotional Materials",
+      "confidence": 0.97,
+      "source": "QuickPrint Promotional Materials\n88 Print Lane\nOrlando, FL 32801"
+    },
+    "vendorTaxId": {
+      "value": "US-EIN-33-1112233",
+      "confidence": 0.96,
+      "source": "Tax ID: 33-1112233"
+    },
+    "invoiceNumber": {
+      "value": "INV-QP-8831",
+      "confidence": 0.99,
+      "source": "Invoice #: INV-QP-8831"
+    },
+    "invoiceDate": {
+      "value": "2026-10-22",
+      "confidence": 0.98,
+      "source": "Date: October 22, 2026"
+    },
+    "dueDate": {
+      "value": "2026-11-21",
+      "confidence": 0.97,
+      "source": "Due Date: November 21, 2026"
+    },
+    "currency": {
+      "value": "USD",
+      "confidence": 0.99,
+      "source": "All amounts in USD"
+    },
+    "poReference": {
+      "value": "PO-2026-007",
+      "confidence": 0.98,
+      "source": "PO #: PO-2026-007"
+    },
+    "lineItems": {
+      "value": [
+        {
+          "description": "Custom Branded Notebooks (500 units)",
+          "qty": 1,
+          "unitPrice": 2250.00,
+          "amount": 2250.00
+        }
+      ],
+      "confidence": 0.97,
+      "source": "Custom Branded Notebooks (500 units) | 1 | $2,250.00 | $2,250.00"
+    },
+    "subtotal": {
+      "value": 2250.00,
+      "confidence": 0.99,
+      "source": "Subtotal: $2,250.00"
+    },
+    "taxAmount": {
+      "value": 135.00,
+      "confidence": 0.98,
+      "source": "Sales Tax (6%): $135.00"
+    },
+    "taxRate": {
+      "value": 0.06,
+      "confidence": 0.97,
+      "source": "Sales Tax (6%): $135.00"
+    },
+    "total": {
+      "value": 2385.00,
+      "confidence": 0.99,
+      "source": "Total Due: $2,385.00"
+    },
+    "taxIncluded": {
+      "value": false,
+      "confidence": 0.95,
+      "source": "Subtotal and tax shown separately"
+    },
+    "bankAccountLast4": {
+      "value": "5599",
+      "confidence": 0.96,
+      "source": "Bank Account: ****5599"
+    },
+    "documentQuality": {
+      "value": "clean",
+      "confidence": 0.99,
+      "source": "Digital PDF, clear text extraction"
+    },
+    "notes": {
+      "value": "Payment Terms: Net 30. Custom branded notebooks with company logo, 80gsm recycled paper.",
+      "confidence": 0.94,
+      "source": "Payment Terms: Net 30. Custom branded notebooks with company logo."
+    }
+  }
+}

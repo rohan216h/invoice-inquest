@@ -1,0 +1,218 @@
+[
+  {
+    "poNumber": "PO-2026-001",
+    "vendorId": "V001",
+    "currency": "USD",
+    "lines": [
+      {
+        "description": "Industrial Safety Gloves (Box of 100)",
+        "qty": 50,
+        "unitPrice": 24.99,
+        "receivedQty": 50
+      }
+    ],
+    "total": 1249.50,
+    "taxRate": 0.08,
+    "amountBilledToDate": 0,
+    "status": "open",
+    "createdDate": "2026-06-15"
+  },
+  {
+    "poNumber": "PO-2026-002",
+    "vendorId": "V002",
+    "currency": "JPY",
+    "lines": [
+      {
+        "description": "Network Switch 48-Port",
+        "qty": 5,
+        "unitPrice": 89000,
+        "receivedQty": 5
+      },
+      {
+        "description": "Cat6 Cable (300m spool)",
+        "qty": 10,
+        "unitPrice": 12000,
+        "receivedQty": 10
+      }
+    ],
+    "total": 565000,
+    "taxRate": 0.10,
+    "amountBilledToDate": 0,
+    "status": "open",
+    "createdDate": "2026-07-01"
+  },
+  {
+    "poNumber": "PO-2026-003",
+    "vendorId": "V003",
+    "currency": "EUR",
+    "lines": [
+      {
+        "description": "Pallet Jack - Standard",
+        "qty": 3,
+        "unitPrice": 850.00,
+        "receivedQty": 3
+      },
+      {
+        "description": "Warehouse Shelving Unit (5-tier)",
+        "qty": 12,
+        "unitPrice": 320.00,
+        "receivedQty": 12
+      }
+    ],
+    "total": 6390.00,
+    "taxRate": 0.19,
+    "amountBilledToDate": 0,
+    "status": "open",
+    "createdDate": "2026-08-10"
+  },
+  {
+    "poNumber": "PO-2026-004",
+    "vendorId": "V004",
+    "currency": "USD",
+    "lines": [
+      {
+        "description": "Executive Standing Desk (Electric)",
+        "qty": 20,
+        "unitPrice": 899.00,
+        "receivedQty": 20
+      },
+      {
+        "description": "Ergonomic Mesh Office Chair",
+        "qty": 20,
+        "unitPrice": 549.00,
+        "receivedQty": 20
+      },
+      {
+        "description": "Monitor Arm (Dual)",
+        "qty": 20,
+        "unitPrice": 189.00,
+        "receivedQty": 20
+      }
+    ],
+    "total": 32740.00,
+    "taxRate": 0.07,
+    "amountBilledToDate": 11580.00,
+    "status": "partial",
+    "createdDate": "2026-05-20"
+  },
+  {
+    "poNumber": "PO-2026-005",
+    "vendorId": "V005",
+    "currency": "USD",
+    "lines": [
+      {
+        "description": "Cloud Hosting - Annual Enterprise Plan",
+        "qty": 1,
+        "unitPrice": 18000.00,
+        "receivedQty": 1
+      },
+      {
+        "description": "DDoS Protection Add-on",
+        "qty": 1,
+        "unitPrice": 3600.00,
+        "receivedQty": 1
+      }
+    ],
+    "total": 21600.00,
+    "taxRate": 0.0,
+    "amountBilledToDate": 0,
+    "status": "open",
+    "createdDate": "2026-03-15"
+  },
+  {
+    "poNumber": "PO-2026-006",
+    "vendorId": "V006",
+    "currency": "GBP",
+    "lines": [
+      {
+        "description": "Management Consulting - Phase 1",
+        "qty": 80,
+        "unitPrice": 150.00,
+        "receivedQty": 80
+      }
+    ],
+    "total": 12000.00,
+    "taxRate": 0.20,
+    "amountBilledToDate": 0,
+    "status": "open",
+    "createdDate": "2026-09-01"
+  },
+  {
+    "poNumber": "PO-2026-007",
+    "vendorId": "V007",
+    "currency": "USD",
+    "lines": [
+      {
+        "description": "Custom Branded Notebooks (500 units)",
+        "qty": 1,
+        "unitPrice": 2250.00,
+        "receivedQty": 1
+      }
+    ],
+    "total": 2250.00,
+    "taxRate": 0.06,
+    "amountBilledToDate": 0,
+    "status": "open",
+    "createdDate": "2026-10-01"
+  },
+  {
+    "poNumber": "PO-2026-008",
+    "vendorId": "V001",
+    "currency": "USD",
+    "lines": [
+      {
+        "description": "Chemical Resistant Apron",
+        "qty": 30,
+        "unitPrice": 45.00,
+        "receivedQty": 30
+      },
+      {
+        "description": "Safety Goggles (ANSI Z87.1)",
+        "qty": 100,
+        "unitPrice": 12.50,
+        "receivedQty": 100
+      }
+    ],
+    "total": 2600.00,
+    "taxRate": 0.08,
+    "amountBilledToDate": 0,
+    "status": "open",
+    "createdDate": "2026-09-20"
+  },
+  {
+    "poNumber": "PO-2026-009",
+    "vendorId": "V003",
+    "currency": "EUR",
+    "lines": [
+      {
+        "description": "Forklift Maintenance Service",
+        "qty": 4,
+        "unitPrice": 1200.00,
+        "receivedQty": 4
+      }
+    ],
+    "total": 4800.00,
+    "taxRate": 0.19,
+    "amountBilledToDate": 0,
+    "status": "open",
+    "createdDate": "2026-10-05"
+  },
+  {
+    "poNumber": "PO-2026-010",
+    "vendorId": "V008",
+    "currency": "SGD",
+    "lines": [
+      {
+        "description": "Aluminium Ingots (Grade 6061) per ton",
+        "qty": 5,
+        "unitPrice": 3200.00,
+        "receivedQty": 5
+      }
+    ],
+    "total": 16000.00,
+    "taxRate": 0.09,
+    "amountBilledToDate": 0,
+    "status": "open",
+    "createdDate": "2026-10-15"
+  }
+]
