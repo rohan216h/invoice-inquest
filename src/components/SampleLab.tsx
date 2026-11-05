@@ -151,3 +151,4 @@ export function SampleLab({ onSelectSample, activeFileName, disabled = false }: 
     </div>
   );
 }
+

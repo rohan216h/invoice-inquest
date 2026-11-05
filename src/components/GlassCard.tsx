@@ -36,3 +36,4 @@ export function GlassCard({
     </motion.div>
   );
 }
+

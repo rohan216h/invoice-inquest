@@ -250,3 +250,4 @@ export function VerdictDisplay({ verdict, onRerun }: VerdictDisplayProps) {
     </div>
   );
 }
+

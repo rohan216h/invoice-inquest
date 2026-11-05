@@ -256,13 +256,12 @@ export default function RulesPage() {
                         <td className="py-3 font-mono text-slate-300">{po.vendorId}</td>
                         <td className="py-3">
                           <span
-                            className={`px-2 py-0.5 rounded text-[10px] font-mono uppercase font-bold border ${
-                              po.status === 'open'
+                            className={`px-2 py-0.5 rounded text-[10px] font-mono uppercase font-bold border ${po.status === 'open'
                                 ? 'bg-emerald-950/60 text-emerald-400 border-emerald-500/30'
                                 : po.status === 'partial'
-                                ? 'bg-amber-950/60 text-amber-400 border-amber-500/30'
-                                : 'bg-slate-800 text-slate-400 border-slate-700'
-                            }`}
+                                  ? 'bg-amber-950/60 text-amber-400 border-amber-500/30'
+                                  : 'bg-slate-800 text-slate-400 border-slate-700'
+                              }`}
                           >
                             {po.status}
                           </span>
@@ -365,9 +364,8 @@ export default function RulesPage() {
                   return (
                     <tr
                       key={vendor.id}
-                      className={`hover:bg-white/[0.02] transition-colors ${
-                        isUnapproved ? 'bg-rose-950/20' : ''
-                      }`}
+                      className={`hover:bg-white/[0.02] transition-colors ${isUnapproved ? 'bg-rose-950/20' : ''
+                        }`}
                     >
                       <td className="py-3 pl-2 font-mono font-bold text-slate-300">{vendor.id}</td>
                       <td className="py-3 font-semibold text-white">
@@ -383,11 +381,10 @@ export default function RulesPage() {
                       <td className="py-3 font-mono text-slate-300">{vendor.currency}</td>
                       <td className="py-3">
                         <span
-                          className={`px-2 py-0.5 rounded text-[10px] font-mono uppercase font-bold border ${
-                            vendor.approved
+                          className={`px-2 py-0.5 rounded text-[10px] font-mono uppercase font-bold border ${vendor.approved
                               ? 'bg-emerald-950/60 text-emerald-400 border-emerald-500/30'
                               : 'bg-rose-950/60 text-rose-400 border-rose-500/30'
-                          }`}
+                            }`}
                         >
                           {vendor.approved ? 'Approved' : 'Unapproved'}
                         </span>

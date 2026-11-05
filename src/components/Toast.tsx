@@ -40,17 +40,17 @@ const iconMap: Record<ToastType, typeof CheckCircle> = {
 };
 
 const colorMap: Record<ToastType, string> = {
-  success: 'text-approved border-l-approved',
-  error: 'text-rejected border-l-rejected',
-  warning: 'text-review border-l-review',
-  info: 'text-info border-l-info',
+  success: 'text-emerald-400 border-l-emerald-400',
+  error: 'text-rose-400 border-l-rose-400',
+  warning: 'text-amber-400 border-l-amber-400',
+  info: 'text-sky-400 border-l-sky-400',
 };
 
 const bgMap: Record<ToastType, string> = {
-  success: 'bg-approved/10',
-  error: 'bg-rejected/10',
-  warning: 'bg-review/10',
-  info: 'bg-info/10',
+  success: 'bg-emerald-950/80',
+  error: 'bg-rose-950/80',
+  warning: 'bg-amber-950/80',
+  info: 'bg-sky-950/80',
 };
 
 // ── Toast Item ─────────────────────────────────────────────────

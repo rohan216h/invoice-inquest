@@ -142,3 +142,4 @@ export function Navigation({ onOpenCommandPalette }: NavigationProps) {
     </header>
   );
 }
+

@@ -21,3 +21,4 @@ export function SkeletonShimmer({ className = '', width, height }: SkeletonShimm
     />
   );
 }
+
