@@ -158,17 +158,25 @@ export async function stageTolerance(ctx: PipelineContext): Promise<StageResult>
 
   // Pass scenario
   const isSplitInstalment = billedToDate > 0;
-  const headline = isSplitInstalment
-    ? `Instalment approved within PO balance (${norm.currency} ${remainingBalance.toFixed(2)} remaining)`
-    : `Within tolerance (PO ${po.poNumber} authorised amount satisfied)`;
+  const isAccommodatedOverage = overage > 0 && overage <= toleranceAllowed;
+
+  const headline = isAccommodatedOverage
+    ? `Accommodated by Policy Tolerance: +${norm.currency} ${overage.toFixed(2)} variance within ±${cfg.amountTolerancePercent}% threshold`
+    : isSplitInstalment
+      ? `Instalment approved within PO balance (${norm.currency} ${remainingBalance.toFixed(2)} remaining)`
+      : `Within tolerance (PO ${po.poNumber} authorised amount satisfied)`;
+
+  const reasoning = isAccommodatedOverage
+    ? `Cumulative billing exceeds original PO commitment by ${norm.currency} ${overage.toFixed(2)}, but falls within the active enterprise tolerance policy limit of ±${cfg.amountTolerancePercent}% ($${toleranceAllowed.toFixed(2)}). Cleared under corporate tolerance policy.`
+    : isSplitInstalment
+      ? `This instalment of ${norm.currency} ${invoiceAmount.toFixed(2)} brings total billed to ${norm.currency} ${newCumulativeBilled.toFixed(2)} of ${po.currency} ${poTotal.toFixed(2)}. Leaves a healthy remaining encumbrance of ${norm.currency} ${remainingBalance.toFixed(2)}.`
+      : `Invoice amount is within the configured tolerance bounds (±${cfg.amountTolerancePercent}% / $${cfg.amountToleranceAbsolute}). Authorized PO budget is fully respected.`;
 
   return {
     stage: 'TOLERANCE',
     status: 'pass',
     headline,
-    reasoning: isSplitInstalment
-      ? `This instalment of ${norm.currency} ${invoiceAmount.toFixed(2)} brings total billed to ${norm.currency} ${newCumulativeBilled.toFixed(2)} of ${po.currency} ${poTotal.toFixed(2)}. Leaves a healthy remaining encumbrance of ${norm.currency} ${remainingBalance.toFixed(2)}.`
-      : `Invoice amount is within the configured tolerance bounds (±${cfg.amountTolerancePercent}% / $${cfg.amountToleranceAbsolute}). Authorized PO budget is fully respected.`,
+    reasoning,
     evidence,
     durationMs,
     data: {
@@ -178,7 +186,7 @@ export async function stageTolerance(ctx: PipelineContext): Promise<StageResult>
       newCumulativeBilled,
       remainingBalance,
       toleranceAllowed,
-      overage: 0,
+      overage: isAccommodatedOverage ? overage : 0,
       isOverbilled: false,
     },
   };

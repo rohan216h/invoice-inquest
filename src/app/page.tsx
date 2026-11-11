@@ -28,6 +28,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import vendorsData from '../../data/vendors.json';
 import posData from '../../data/purchase_orders.json';
+import cachedExtractionsData from '../../data/cached-extractions.json';
 
 export default function RunPage() {
   const { runs, addRun, clearRuns, seedRuns } = useRunHistory();
@@ -265,23 +266,31 @@ export default function RunPage() {
   const handleConfigChange = async (newConfig: PipelineConfig) => {
     setConfig(newConfig);
 
-    if (extraction && activeFileName) {
-      // Instantly recalculate decision in browser
-      const reevaluated = await runPipelineClientSide({
-        extraction,
-        fileName: activeFileName,
-        config: newConfig,
-        vendors: vendorsData as unknown as any,
-        purchaseOrders: posData as unknown as any,
-        runHistory: runs,
-      });
+    const activeExtract =
+      extraction ||
+      (activeFileName ? (cachedExtractionsData as Record<string, ExtractionResult>)[activeFileName] : null);
 
-      setVerdict(reevaluated.verdict);
-      setStageResults((prev) => {
-        // Keep INGEST & EXTRACT as they were, update downstream
-        const preserved = prev.filter((s) => s.stage === 'INGEST' || s.stage === 'EXTRACT');
-        return [...preserved, ...reevaluated.stages];
-      });
+    if (activeExtract && activeFileName) {
+      try {
+        // Instantly recalculate decision in browser
+        const reevaluated = await runPipelineClientSide({
+          extraction: activeExtract,
+          fileName: activeFileName,
+          config: newConfig,
+          vendors: vendorsData as unknown as any,
+          purchaseOrders: posData as unknown as any,
+          runHistory: runs,
+        });
+
+        setVerdict(reevaluated.verdict);
+        setStageResults((prev) => {
+          // Keep INGEST & EXTRACT as they were, update downstream
+          const preserved = prev.filter((s) => s.stage === 'INGEST' || s.stage === 'EXTRACT');
+          return [...preserved, ...reevaluated.stages];
+        });
+      } catch (err) {
+        console.error('Client-side re-evaluation error:', err);
+      }
     }
   };
 

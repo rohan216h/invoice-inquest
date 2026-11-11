@@ -140,7 +140,7 @@ export interface Verdict {
 // ── Pipeline config (tolerance lab) ──────────────────────────
 export interface PipelineConfig {
   amountTolerancePercent: number;     // default 2
-  amountToleranceAbsolute: number;    // default 50
+  amountToleranceAbsolute: number;    // default 2000
   duplicateSensitivity: number;       // 0-1, default 0.7
   poMatchConfidenceThreshold: number; // 0-1, default 0.6
   extractionConfidenceThreshold: number; // 0-1, default 0.5
@@ -148,7 +148,7 @@ export interface PipelineConfig {
 
 export const DEFAULT_CONFIG: PipelineConfig = {
   amountTolerancePercent: 2,
-  amountToleranceAbsolute: 50,
+  amountToleranceAbsolute: 2000,
   duplicateSensitivity: 0.7,
   poMatchConfidenceThreshold: 0.6,
   extractionConfidenceThreshold: 0.5,
@@ -220,7 +220,7 @@ export interface PurchaseOrder {
 
 // ── Pipeline context ─────────────────────────────────────────
 export interface PipelineContext {
-  fileBuffer: Buffer;
+  fileBuffer: Buffer | Uint8Array;
   fileName: string;
   fileMimeType: string;
   fileSize: number;

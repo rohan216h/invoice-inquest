@@ -125,7 +125,7 @@ export async function runPipelineClientSide(params: {
   runHistory: RunRecord[];
 }): Promise<{ stages: StageResult[]; verdict: Verdict }> {
   const ctx: PipelineContext = {
-    fileBuffer: Buffer.from(''),
+    fileBuffer: typeof Buffer !== 'undefined' ? Buffer.alloc(0) : new Uint8Array(0),
     fileName: params.fileName,
     fileMimeType: params.fileName.endsWith('.png') ? 'image/png' : 'application/pdf',
     fileSize: 1024,

@@ -113,6 +113,48 @@ describe('Tolerance & Cumulative PO Check', () => {
     expect(res.data?.isOverbilled).toBe(true);
     expect(res.headline).toContain('PO Ceiling Exceeded');
   });
+
+  it('instantly flips to pass when tolerance percentage is increased in tolerance lab', async () => {
+    // Cumulative overage for 02b is $1,010 against PO $32,740.
+    // At default 2% tolerance ($654.80), it warns.
+    const ctxDefault = createTestContext({
+      matchedPO: samplePO,
+      fileName: '02b_split_po_instalment_3_overbill.pdf',
+      config: { ...DEFAULT_CONFIG, amountTolerancePercent: 2 },
+      normalised: {
+        invoiceNumber: 'INVPOF89',
+        invoiceNumberRaw: 'INV-POF-0089',
+        invoiceDate: '2026-11-01',
+        dueDate: '2026-12-01',
+        currency: 'USD',
+        vendorName: 'Pinnacle Office Furnishings Inc.',
+        vendorTaxId: 'US-EIN-92-7654321',
+        subtotal: 13180.00,
+        taxAmount: 922.60,
+        taxRate: 0.07,
+        total: 14102.60,
+        lineItems: [],
+        poReference: 'PO-2026-004',
+        bankAccountLast4: '8812',
+        taxIncluded: false,
+      },
+    });
+
+    const resDefault = await stageTolerance(ctxDefault);
+    expect(resDefault.status).toBe('warn');
+    expect(resDefault.data?.isOverbilled).toBe(true);
+
+    // Now simulate user sliding Amount Tolerance to 5% (allowed = $1,637)
+    const ctxAdjusted = createTestContext({
+      ...ctxDefault,
+      config: { ...DEFAULT_CONFIG, amountTolerancePercent: 5 },
+    });
+
+    const resAdjusted = await stageTolerance(ctxAdjusted);
+    expect(resAdjusted.status).toBe('pass');
+    expect(resAdjusted.data?.isOverbilled).toBe(false);
+    expect(resAdjusted.headline).toContain('Accommodated by Policy Tolerance');
+  });
 });
 
 describe('Duplicate Fuzzy Match Check', () => {

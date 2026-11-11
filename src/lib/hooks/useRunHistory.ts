@@ -94,7 +94,7 @@ function generateSeedRuns(): RunRecord[] {
 
     const config: PipelineConfig = {
       amountTolerancePercent: 2,
-      amountToleranceAbsolute: 50,
+      amountToleranceAbsolute: 2000,
       duplicateSensitivity: 0.7,
       poMatchConfidenceThreshold: 0.6,
       extractionConfidenceThreshold: 0.5,
