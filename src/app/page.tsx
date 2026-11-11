@@ -49,6 +49,7 @@ export default function RunPage() {
   const [isDemoRunning, setIsDemoRunning] = useState(false);
   const [demoStep, setDemoStep] = useState<number>(0);
   const [commandPaletteOpen, setCommandPaletteOpen] = useState(false);
+  const stopDemoRef = useRef(false);
 
   const demoScriptFiles = [
     '01_happy_path_clean.pdf',
@@ -212,26 +213,44 @@ export default function RunPage() {
     }
   };
 
-  // Run Demo Script: Happy path then 4 edge cases with 2s pause
+  // Run Demo Script: Happy path then 4 edge cases with pause
   const startDemoScript = async () => {
-    if (isDemoRunning || isRunning) return;
+    if (isDemoRunning) {
+      // Toggle off / cancel
+      stopDemoRef.current = true;
+      setIsDemoRunning(false);
+      setDemoStep(0);
+      addToast('Automated demo stopped', 'info');
+      return;
+    }
+
+    if (isRunning) return;
+    stopDemoRef.current = false;
     setIsDemoRunning(true);
-    addToast('Starting automated demo script: 5 sequential test runs', 'info');
+    addToast('Starting automated demo script (Click button again to Stop)', 'info');
 
     for (let i = 0; i < demoScriptFiles.length; i++) {
+      if (stopDemoRef.current) break;
       setDemoStep(i + 1);
       const fileName = demoScriptFiles[i];
       await handleSelectSample(fileName);
 
-      // Pause 2.2 seconds between runs
+      if (stopDemoRef.current) break;
+
+      // Pause 3 seconds between runs so viewer can see verdict
       if (i < demoScriptFiles.length - 1) {
-        await new Promise((resolve) => setTimeout(resolve, 2200));
+        for (let p = 0; p < 30; p++) {
+          if (stopDemoRef.current) break;
+          await new Promise((resolve) => setTimeout(resolve, 100));
+        }
       }
     }
 
     setIsDemoRunning(false);
     setDemoStep(0);
-    addToast('Demo script complete! All 5 scenarios executed.', 'success');
+    if (!stopDemoRef.current) {
+      addToast('Demo script complete! All 5 scenarios executed.', 'success');
+    }
   };
 
   // Tolerance Lab Client-Side Re-evaluation
@@ -282,16 +301,16 @@ export default function RunPage() {
         <div className="flex items-center gap-3 shrink-0">
           <button
             onClick={startDemoScript}
-            disabled={isRunning || isDemoRunning}
+            disabled={isRunning && !isDemoRunning}
             className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold shadow-lg transition-all ${
               isDemoRunning
-                ? 'bg-amber-500 text-navy-950 animate-pulse'
+                ? 'bg-amber-500 hover:bg-amber-400 text-navy-950 shadow-amber-500/25 cursor-pointer'
                 : 'bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-navy-950 shadow-emerald-500/25 hover:scale-[1.02]'
             } ${isRunning && !isDemoRunning ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
-            <Play className="w-4 h-4 fill-current" />
+            <Play className={`w-4 h-4 ${isDemoRunning ? 'hidden' : 'fill-current'}`} />
             <span>
-              {isDemoRunning ? `Running Demo (${demoStep}/5)...` : '▶ Run Demo Script (Press R)'}
+              {isDemoRunning ? `⏹ Stop Auto-Run (Step ${demoStep}/5)` : '▶ Run Demo Script (Press R)'}
             </span>
           </button>
         </div>

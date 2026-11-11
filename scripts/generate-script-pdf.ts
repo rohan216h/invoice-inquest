@@ -85,7 +85,6 @@ async function generateScriptPdf() {
     width: contentWidth,
     height: 85,
     color: navyDark,
-    borderRadius: 8,
   });
 
   currentPage.drawText('INVOICE INQUEST', {
@@ -125,7 +124,6 @@ async function generateScriptPdf() {
       color: bgLight,
       borderColor: borderLight,
       borderWidth: 0.5,
-      borderRadius: 4,
     });
 
     currentPage.drawText(title, {
@@ -196,7 +194,6 @@ async function generateScriptPdf() {
       color: rgb(240 / 255, 249 / 255, 255 / 255), // light sky tint
       borderColor: rgb(186 / 255, 230 / 255, 253 / 255),
       borderWidth: 0.8,
-      borderRadius: 6,
     });
 
     let currentY = y - 16;
@@ -252,7 +249,6 @@ async function generateScriptPdf() {
       color: rgb(240 / 255, 253 / 255, 244 / 255), // light emerald tint
       borderColor: rgb(187 / 255, 247 / 255, 208 / 255),
       borderWidth: 0.8,
-      borderRadius: 6,
     });
 
     let currentY = y - 16;
@@ -321,16 +317,18 @@ async function generateScriptPdf() {
   );
 
   // --- SEGMENT 2 ---
-  drawSectionHeader('SEGMENT 2: THE AUTOMATED DEMO SCRIPT (0:45 - 2:30)', 'Live 10-Stage Pipeline');
+  drawSectionHeader('SEGMENT 2: THE EDGE CASES WALKTHROUGH (0:45 - 2:30)', 'Sample Lab or Demo Runner');
   drawActionBox([
-    '0:45: Click the big green "Run Demo Script" button (or press "R" on your keyboard).',
-    'Notice the banner appear: "Starting automated demo script: 5 sequential test runs".',
-    'Screen splits into two panels: Document Preview & Extracted Fields on left; 10-Stage Pipeline on right.',
+    'CRITICAL PRESENTATION TIP: You have TWO ways to trigger the samples:',
+    '• OPTION A (RECOMMENDED FOR VIDEO): Click the cards in the "Sample Invoices Lab" row one by one at your own pace! Each invoice will stay on screen as long as you want to speak.',
+    '• OPTION B (HANDS-FREE RUNNER): Click "Run Demo Script" (or press R). The button turns to "Stop Auto-Run", allowing you to pause anytime.',
+    'When a sample is selected, the screen splits: Document Preview & Extracted Fields on left; 10-Stage Pipeline & Verdict on right.',
   ]);
 
   // Scenario 1
-  drawParagraph('Scenario 1: Clean Baseline Match (01_happy_path_clean.pdf)', { font: fontBold, color: navyDark });
+  drawParagraph('Scenario 1: Clean Baseline Match (Click "Happy Path" / 01_happy_path_clean.pdf)', { font: fontBold, color: navyDark });
   drawActionBox([
+    'Click the first card: "Happy Path" (01_happy_path_clean.pdf) in the Sample Lab.',
     'Point cursor to left panel: show Acme Industrial PDF preview and "Engine: Gemini 2.5 Flash" badge.',
     'Point to right panel: watch glowing photon packet travel along the 10 stage nodes.',
     'Watch green APPROVED rubber stamp slam down with confetti explosion! Show the Rule Trace table.',
@@ -340,42 +338,44 @@ async function generateScriptPdf() {
   );
 
   // Scenario 2
-  drawParagraph('Scenario 2: Cumulative PO Overbilling (02b_split_po_instalment_3_overbill.pdf)', { font: fontBold, color: navyDark });
+  drawParagraph('Scenario 2: Cumulative PO Overbilling (Click "Split PO #3 Overbill" in Sample Lab)', { font: fontBold, color: navyDark });
   drawActionBox([
-    'Stepper advances automatically after 2-second pause.',
+    'Click the 3rd card: "Split PO #3 Overbill" (02b_split_po_instalment_3_overbill.pdf).',
     'Point to Stage 8 (Tolerance) turning amber. Show rubber stamp: amber NEEDS REVIEW.',
     'Point out the exact calculated overage: "PO Ceiling Exceeded: Overbilled by $1,330.00".',
+    'Explain how this invoice remains on screen so you can speak at your natural pace.',
   ]);
   drawScriptBox(
-    `"Next, the system processes a multi-stage instalment against a $32,740 purchase order. Instalments 1 and 2 had already consumed over $20,000. This 3rd instalment bills $14,445. Individually, the invoice looks fine — but our cumulative encumbrance check detects that total billing will reach $34,070, exceeding the contracted ceiling by $1,330. The system halts auto-approval and tags it NEEDS REVIEW for procurement manager authorization."`
+    `"Next, let us evaluate our second scenario: a multi-stage instalment against a $32,740 purchase order. Instalments 1 and 2 had already consumed over $20,000. This 3rd instalment bills $14,445. Individually, the invoice looks fine — but our cumulative encumbrance check detects that total billing will reach $34,070, exceeding the contracted ceiling by $1,330. The system halts auto-approval and tags it NEEDS REVIEW for procurement manager authorization."`
   );
 
   // Scenario 3
-  drawParagraph('Scenario 3: Anti-Fraud Near-Duplicate (03_near_duplicate.pdf)', { font: fontBold, color: navyDark });
+  drawParagraph('Scenario 3: Anti-Fraud Near-Duplicate (Click "Near-Duplicate" in Sample Lab)', { font: fontBold, color: navyDark });
   drawActionBox([
-    'Stepper advances. Stage 9 (Duplicate Check) turns red.',
-    'Watch rubber stamp slam down with red pulse: REJECTED.',
-    'Scroll to the "Anti-Fraud Duplicate Investigation: Side-by-Side Evidence" panel and show comparison.',
+    'Click the 4th card: "Near-Duplicate" (03_near_duplicate.pdf) in the Sample Lab.',
+    'Stage 9 (Duplicate Check) turns red. Watch rubber stamp slam down with red pulse: REJECTED.',
+    'Scroll down to the "Anti-Fraud Duplicate Investigation: Side-by-Side Evidence" panel to show comparison.',
   ]);
   drawScriptBox(
     `"Next is an AP nightmare: an anti-fraud near-duplicate. A vendor submits 'INV 2041 ' with a space and no hyphen, three days after receiving payment for 'INV-2041'. Traditional keyword queries miss this. But our normalisation engine strips whitespace, and our fuzzy duplicate detective flags identical supplier, identical dollar amounts, and identical line items. The invoice is automatically REJECTED, payment is held, and the AP specialist sees side-by-side evidence comparing both submissions."`
   );
 
   // Scenario 4
-  drawParagraph('Scenario 4: Missing Critical Headers (04_missing_fields.pdf)', { font: fontBold, color: navyDark });
+  drawParagraph('Scenario 4: Missing Critical Headers (Click "Missing Headers" in Sample Lab)', { font: fontBold, color: navyDark });
   drawActionBox([
-    'Stepper advances. Stage 4 (Completeness) fails. Rubber stamp lands: blue INFO REQUESTED.',
+    'Click the 5th card: "Missing Headers" (04_missing_fields.pdf) in the Sample Lab.',
+    'Stage 4 (Completeness) fails. Rubber stamp lands: blue INFO REQUESTED.',
     'Scroll down to the blue "Auto-Drafted Vendor Clarification Request" card.',
-    'Click "Copy Email Draft" button (a toast pops: "Copied to Clipboard!").',
+    'Click "Copy Email Draft" button (toast confirms: "Copied to Clipboard!").',
   ]);
   drawScriptBox(
     `"In Scenario 4, EuroLogistik submits an invoice with missing mandatory fields: no invoice number and no grand total. Under our precedence hierarchy, regulatory incompleteness takes precedence: verdict is INFO REQUESTED. Rather than having an AP clerk draft an email from scratch, the system auto-drafts a professional, specific clarification request detailing the exact missing headers, ready to copy and send in one click."`
   );
 
   // Scenario 5
-  drawParagraph('Scenario 5: Scanned Implied PO + BEC Fraud Flag (05_scanned_implied_po.png)', { font: fontBold, color: navyDark });
+  drawParagraph('Scenario 5: Scanned Implied PO + BEC Fraud Flag (Click "Scanned + Bank Mismatch" in Sample Lab)', { font: fontBold, color: navyDark });
   drawActionBox([
-    'Stepper advances to final demo step.',
+    'Click the 6th card: "Scanned + Bank Mismatch" (05_scanned_implied_po.png) in the Sample Lab.',
     'Show the scanned, rotated, yellowed PNG receipt in the left preview panel.',
     'Show Stage 6 (PO Match) green (Inferred PO with 88% confidence via token Jaccard).',
     'Show Stage 5 (Vendor Check) amber with BANK DETAILS CHANGED. Final verdict: NEEDS REVIEW.',
@@ -481,3 +481,4 @@ generateScriptPdf().catch((err) => {
   console.error('Error generating PDF:', err);
   process.exit(1);
 });
+
