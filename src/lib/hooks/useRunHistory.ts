@@ -170,8 +170,8 @@ export function useRunHistory() {
   // Seed on first load
   const isSeeded = runs.length > 0;
 
-  const seedRuns = useCallback(() => {
-    if (!isSeeded) {
+  const seedRuns = useCallback((force = false) => {
+    if (!isSeeded || force) {
       setRuns(generateSeedRuns());
     }
   }, [isSeeded, setRuns]);

@@ -30,8 +30,16 @@ import vendorsData from '../../data/vendors.json';
 import posData from '../../data/purchase_orders.json';
 
 export default function RunPage() {
-  const { runs, addRun } = useRunHistory();
+  const { runs, addRun, clearRuns, seedRuns } = useRunHistory();
   const { addToast } = useToast();
+
+  const handleResetHistory = () => {
+    clearRuns();
+    setTimeout(() => {
+      seedRuns(true);
+      addToast('Run history reset to clean baseline (duplicates cleared)', 'success');
+    }, 50);
+  };
 
   // State
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -297,8 +305,17 @@ export default function RunPage() {
           </p>
         </div>
 
-        {/* Big Demo Script Button */}
-        <div className="flex items-center gap-3 shrink-0">
+        {/* Action Buttons */}
+        <div className="flex items-center gap-2.5 shrink-0">
+          <button
+            onClick={handleResetHistory}
+            className="flex items-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700/80 border border-white/[0.08] transition-colors shadow-sm"
+            title="Clear previous test history so Happy Path and edge cases start fresh"
+          >
+            <RotateCcw className="w-3.5 h-3.5 text-slate-400" />
+            <span>Reset Demo State</span>
+          </button>
+
           <button
             onClick={startDemoScript}
             disabled={isRunning && !isDemoRunning}
