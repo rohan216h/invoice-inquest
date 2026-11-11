@@ -68,7 +68,7 @@ async function extractWithGemini(
 
     const inlineData = {
       inlineData: {
-        data: ctx.fileBuffer.toString('base64'),
+        data: Buffer.from(ctx.fileBuffer).toString('base64'),
         mimeType: geminiMimeType(ctx.fileMimeType),
       },
     };
@@ -140,7 +140,7 @@ async function extractWithHeuristic(
     const pdfModule = await import('pdf-parse');
     const pdfParse = ((pdfModule as unknown as { default?: (b: Buffer) => Promise<{ text: string }> }).default ||
       pdfModule) as unknown as (b: Buffer) => Promise<{ text: string }>;
-    const pdfData = await pdfParse(ctx.fileBuffer);
+    const pdfData = await pdfParse(Buffer.from(ctx.fileBuffer));
     const text = pdfData.text;
 
     if (!text || text.trim().length === 0) {
